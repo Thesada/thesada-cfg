@@ -1,0 +1,48 @@
+# Thesada SHT31 Monitor
+# Temperature and humidity sensor node
+# Hardware: Freenove ESP32-S3 WROOM + SHT31
+# SPDX-License-Identifier: Apache-2.0
+
+esphome:
+  name: thesada-sht31
+  friendly_name: "Thesada SHT31"
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: arduino
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: "Thesada-SHT31-Fallback"
+
+captive_portal:
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+logger:
+  level: INFO
+
+i2c:
+  sda: GPIO11
+  scl: GPIO12
+  scan: true
+
+sensor:
+  - platform: sht3xd
+    temperature:
+      name: "Temperature"
+      id: temperature
+    humidity:
+      name: "Humidity"
+      id: humidity
+    address: 0x44
+    update_interval: 30s
