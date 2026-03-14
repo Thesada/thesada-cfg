@@ -1,6 +1,6 @@
 # Thesada OWB Monitor
 # Central Boiler E-Classic — house loop and barn loop
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: GPL-3.0-only
 
 esphome:
   name: thesada-owb

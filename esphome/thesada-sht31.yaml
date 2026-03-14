@@ -1,7 +1,7 @@
 # Thesada SHT31 Monitor
 # Temperature and humidity sensor node
 # Hardware: Freenove ESP32-S3 WROOM + SHT31
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: GPL-3.0-only
 
 esphome:
   name: thesada-sht31
